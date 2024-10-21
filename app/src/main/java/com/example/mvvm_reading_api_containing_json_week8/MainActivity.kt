@@ -5,8 +5,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.text.KeyboardOptions
-import androidx.compose.material.*
-import androidx.compose.material3.Button
+ import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Surface
@@ -22,6 +21,7 @@ import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.mvvm_reading_api_containing_json_week8.ui.theme.MVVMreadingAPIcontainingJSONweek8Theme
 import com.example.mvvm_reading_api_containing_json_week8.viewmodel.ExchangeRatesViewModel
+import com.example.mvvm_reading_api_containing_json_week8.viewmodel.ExchangeRatesUIState
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -78,9 +78,10 @@ fun CalculatorScreen(eurInput: String, gbp: Double, changeEur: (value: String) -
         }
     }
 }
+
 @Composable
 fun CalculatorApp(exchangeRatesViewModel: ExchangeRatesViewModel = viewModel()) {
-   when (exchangeRatesViewModel.ExchangeRatesUIState) {
+   when (exchangeRatesViewModel.exchangeRatesUIState) {
        is ExchangeRatesUIState.Success -> {
            CalculatorScreen(
                 eurInput = exchangeRatesViewModel.eurInput,
@@ -94,6 +95,7 @@ fun CalculatorApp(exchangeRatesViewModel: ExchangeRatesViewModel = viewModel()) 
            LoadingScreen()
        }
        is ExchangeRatesUIState.Error -> {
+           ErrorScreen()
        }
    }
 }

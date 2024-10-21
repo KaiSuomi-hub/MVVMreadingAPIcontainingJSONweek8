@@ -39,6 +39,11 @@ android {
     buildFeatures {
         compose = true
     }
+    java {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+
 }
 
 dependencies {
@@ -51,6 +56,14 @@ dependencies {
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
     implementation(libs.androidx.ui.tooling)
+    implementation("com.squareup.okhttp3:okhttp:4.12.0")
+    implementation("com.squareup.okhttp3:logging-interceptor:4.12.0")
+    implementation("com.google.code.gson:gson:2.8.8")
+    implementation("androidx.compose.ui:ui-tooling:1.1.0-alpha04")
+    implementation("androidx.compose.ui:ui:1.1.0-alpha04")
+    implementation("androidx.compose.foundation:foundation:1.1.1")
+    implementation("androidx.compose.material3:material3:1.1.0-alpha04")
+
     implementation("androidx.compose.material:material:1.1.1")
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
     implementation("com.squareup.retrofit2:converter-gson:2.0.0")
