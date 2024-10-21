@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">MVVM-reading-API-containing-JSON-week8</string>
+    <string name="app_name">ExchangeRatesAPISampleAnswer</string>
+    <string name="currency_calculator">Currency Calculator</string>
+    <string name="enter_euros">Enter euros</string>
+    <string name="calculate">Calculate</string>
+    <string name="result">Result is %s pounds</string>
 </resources>

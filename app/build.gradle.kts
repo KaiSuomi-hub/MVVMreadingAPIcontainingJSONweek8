@@ -17,7 +17,9 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
-
+    viewBinding {
+        enable = true
+    }
     buildTypes {
         release {
             isMinifyEnabled = false
@@ -40,7 +42,6 @@ android {
 }
 
 dependencies {
-
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
@@ -49,11 +50,12 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
-    testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.junit)
-    androidTestImplementation(libs.androidx.espresso.core)
-    androidTestImplementation(platform(libs.androidx.compose.bom))
-    androidTestImplementation(libs.androidx.ui.test.junit4)
-    debugImplementation(libs.androidx.ui.tooling)
-    debugImplementation(libs.androidx.ui.test.manifest)
-}
+    implementation(libs.androidx.ui.tooling)
+    implementation("androidx.compose.material:material:1.1.1")
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.0.0")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.5.1")
+    testImplementation("junit:junit:4.13.2")
+    androidTestImplementation("androidx.test.ext:junit:1.1.5")
+    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+ }
